@@ -40,35 +40,6 @@ variable "load_balancer_internal" {}
 # Tipo do Load Balancer (application, network, gateway)
 variable "load_balancer_type" {}
 
-#### ECS General ####
-# Configurações das instâncias EC2 que compõem o cluster ECS
-
-# AMI das instâncias EC2 (deve ser uma AMI otimizada para ECS)
-variable "nodes_ami" {}
-
-# Tipo de instância EC2 (ex: t3.micro, t3.small, m5.large)
-variable "nodes_instance_type" {}
-
-# Tamanho do volume EBS em GB
-variable "node_volume_size" {}
-
-# Tipo do volume EBS (gp2, gp3, io1, io2)
-variable "node_volume_type" {}
-
-# Configurações do Auto Scaling Group para instâncias On-Demand
-variable "cluster_on_demand_min_size" {} # Mínimo de instâncias
-
-variable "cluster_on_demand_max_size" {} # Máximo de instâncias
-
-variable "cluster_on_demand_desired_size" {} # Número desejado de instâncias
-
-# Configurações do Auto Scaling Group para instâncias Spot
-variable "cluster_spot_min_size" {} # Mínimo de instâncias Spot
-
-variable "cluster_spot_max_size" {} # Máximo de instâncias Spot
-
-variable "cluster_spot_desired_size" {} # Número desejado de instâncias Spot
-
 variable "capacity_providers" {
   description = "Lista de provedores de capacidade para o cluster ECS (ex: [\"FARGATE\", \"FARGATE_SPOT\"])"
   type        = list(string)
