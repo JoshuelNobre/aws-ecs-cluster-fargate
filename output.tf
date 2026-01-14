@@ -15,3 +15,11 @@ output "lb_ssm_arn" {
 output "lb_ssm_listener" {
   value = aws_ssm_parameter.lb_listener.id
 }
+
+output "internal_load_balancer_dns" {
+  value = aws_lb.internal.dns_name
+}
+
+output "cloudmap_ssm" {
+  value = aws_ssm_parameter.cloudmap.id
+}
